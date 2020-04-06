@@ -29,7 +29,7 @@ $rep = $bdd->query(" SELECT * FROM animaux WHERE nom_association ='$asso' ");
 //creation des palettes
 $aire_palette =9600;
 
-$liste_palette = []; 
+$liste_palette = array(); 
 $palette=0;
 //boucle sur les animaux d'une asso
 for($i=0;$liste_animaux_asso[$i]>=count($liste_animaux_asso)-1;$i++){
@@ -47,15 +47,15 @@ for($i=0;$liste_animaux_asso[$i]>=count($liste_animaux_asso)-1;$i++){
         print_r($animauxPalette);
         echo '</pre>';
     }else{ //sinon on ajoute la palette à la liste des palette
-        echo $palette;
+        echo $palette.'palette pleine';
        
         array_push($liste_palette, $animauxPalette);
       
-        
+        echo'<pre>';
+    print_r($liste_palette);
+    echo '</pre>';
     }
 }
-echo'<pre>';
-print_r($liste_palette);
-echo '</pre>';
+
 }
 ?>
